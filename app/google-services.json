@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "943609395856",
+    "firebase_url": "https://erudite-host-243006.firebaseio.com",
+    "project_id": "erudite-host-243006",
+    "storage_bucket": "erudite-host-243006.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943609395856:android:536178f929d4049e",
+        "android_client_info": {
+          "package_name": "com.doubleshadow.fiw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943609395856-fat6osoo474fiqtmh5vupqjgtoh95j2e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO9ltpt0l4U6JkLSPGSmbLy-X4VzLqjVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943609395856-fat6osoo474fiqtmh5vupqjgtoh95j2e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
