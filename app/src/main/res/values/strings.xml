@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">FiW</string>
     <string name="title_activity_maps">Map</string>
+    <string name="add_location">+</string>
     <string name="login_details_title">Login or Signup</string>
+    <string name="welcome_message">Welcome to FIW</string>
     <string name="signed_out">Signed out</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
