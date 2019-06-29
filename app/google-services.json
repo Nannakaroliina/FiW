@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "943609395856-b430cntnrsloj4jefdo7d71m20lmm2s6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doubleshadow.fiw",
+            "certificate_hash": "319cad8de616dab869e486d0c378c399da4319e8"
+          }
+        },
+        {
           "client_id": "943609395856-fat6osoo474fiqtmh5vupqjgtoh95j2e.apps.googleusercontent.com",
           "client_type": 3
         }

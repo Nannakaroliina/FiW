@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">FiW</string>
     <string name="title_activity_maps">Map</string>
+    <string name="login_details_title">Login or Signup</string>
+    <string name="signed_out">Signed out</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="login">Login</string>
+    <string name="create_account">Create account</string>
+    <string name="logout">Logout</string>
+    <string name="verify_email">Verify your email</string>
+    <string name="open_map">Open map</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
 </resources>
