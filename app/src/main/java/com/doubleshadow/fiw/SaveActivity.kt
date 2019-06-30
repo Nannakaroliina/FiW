@@ -27,10 +27,8 @@ class SaveActivity : AppCompatActivity() {
 
         // Set values to location
         location.locationName = location_name_txt.text.toString()
-        val latStr = location_lat_txt.text.toString()
-        location.lat = latStr.toDouble()
-        val lngStr = location_lng_txt.text.toString()
-        location.lgn = lngStr.toDouble()
+        location.lat = location_lat_txt.text.toString().toDouble()
+        location.lgn = location_lng_txt.text.toString().toDouble()
 
         // Get object id for new location
         val newLocation = mData.child(Statics.FIREBASE_TASK).push()
