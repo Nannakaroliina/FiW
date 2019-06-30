@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         logout_btn.setOnClickListener(this)
         verify_email_btn.setOnClickListener(this)
         open_map_btn.setOnClickListener(this)
+        add_location_btn.setOnClickListener(this)
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance()
@@ -175,12 +176,18 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             R.id.logout_btn -> logOut()
             R.id.verify_email_btn -> sendEmailVerification()
             R.id.open_map_btn -> openMap()
+            R.id.add_location_btn -> addLocationActivity()
         }
+    }
+
+    private fun addLocationActivity() {
+        val intent = Intent(this, SaveActivity::class.java)
+        startActivity(intent)
     }
 
     private fun openMap() {
         val intent = Intent(this, MapsActivity::class.java)
-        startActivity(intent);
+        startActivity(intent)
     }
 
     companion object {

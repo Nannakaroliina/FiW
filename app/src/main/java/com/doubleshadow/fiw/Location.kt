@@ -1,9 +1,13 @@
 package com.doubleshadow.fiw
 
-import com.google.android.gms.maps.model.LatLng
 
-data class Location (
-    var locationId: String = "",
-    var locationName: String = "",
-    var locationLatLng: LatLng
-    )
+class Location {
+    companion object Factory {
+        fun create(): Location = Location()
+    }
+
+    var locationId: String? = null
+    var locationName: String? = null
+    var lat: Double? = null
+    var lgn: Double? = null
+}
