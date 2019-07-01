@@ -20,8 +20,11 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.activity_maps.*
 import java.io.IOException
+
+
 
 
 
@@ -29,6 +32,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     override fun onMarkerClick(p0: Marker?) = false
 
     private lateinit var map: GoogleMap
+
+    private lateinit var mDatabase: DatabaseReference
+
+    private lateinit var refDatabase: DatabaseReference
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
@@ -67,9 +74,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         createLocationRequest()
 
-        add_location_btn.setOnClickListener{
-            addLocation()
-        }
+        /*add_location_btn.setOnClickListener(object : View.OnClickListener(){
+            //addLocation()
+            override fun onClick(view: View) {
+                //change to refDatabase or mDatabase.child("Location")
+                val newPost = mDatabase.push()
+                //the push() command is already creating unique key
+                newPost.setValue(latlng)
+            }
+        })*/
+
     }
 
     private fun getAddress(latLng: LatLng): String {
@@ -234,5 +248,38 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         */
 
         setUpMap()
+
+        map.setOnMapLongClickListener { point ->
+
+            // added marker saved as marker and coordinates passed to latlng
+            val marker = map.addMarker(MarkerOptions().position(point))
+            val latlng = marker.getPosition()
+
+            add_location_btn.setOnClickListener {
+                val newPost = mDatabase.child("location").push()
+                newPost.setValue(latlng)
+            }
+        }
+
+        /*refDatabase.addChildEventListener(object : ChildEventListener() {
+            override fun onChildAdded(dataSnapshot : DataSnapshot, prevChildKey : String) {
+                val newLocation = LatLng(
+                    dataSnapshot.child("latitude").getValue(Long.class),
+                        dataSnapshot.child("longitude").getValue(Long.class)
+                        )
+                map.addMarker(MarkerOptions()
+                    .position(newLocation)
+                    .title(dataSnapshot.getKey()));
+            }
+
+            override fun onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            override fun onChildRemoved(DataSnapshot dataSnapshot) {}
+
+            override fun onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
+
+            override fun onCancelled(DatabaseError databaseError) {}
+            })
+            */
     }
 }
